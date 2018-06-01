@@ -10,11 +10,7 @@ namespace Primavera.Logistics.Extensibility.Sales
         {
             base.AntesDeGravar(ref Cancel, e);
 
-            if (!GlobalFunctions.ValidateZipCode(DocumentoVenda.CodigoPostal))
-            {
-                PSO.Dialogos.MostraAviso("The zip code is invalid. A valid format must be like this '9999-999'.");
-                Cancel = true;
-            }
+            this.DocumentoVenda.Observacoes = "O meu primeiro projeto de extensibilidade";
         }
     }
 }
